@@ -1,0 +1,14 @@
+<h1>Edit Product</h1>
+<form action="/products/<%= product._id %>?_method=PUT" method="POST">
+  <input name="name" value="<%= product.name %>" placeholder="Name" required />
+  <input name="address" value="<%= product.address %>" placeholder="Address" />
+  <input name="phone" value="<%= product.phone %>" placeholder="Phone" />
+  <label for="supplierId">Supplier:</label>
+  <select name="supplierId" id="supplierId" required>
+    <% suppliers.forEach(supplier => { %>
+      <option value="<%= supplier._id %>" <%= supplier._id.toString() === product.supplierId._id.toString() ? 'selected' : '' %>><%= supplier.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Update</button>
+</form>
+<a href="/products">Back to Products</a>

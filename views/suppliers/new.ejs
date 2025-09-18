@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thêm Supplier mới</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    form {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 400px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #229954;
+    }
+    a {
+      text-decoration: none;
+      color: #2980b9;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thêm Supplier mới</h1>
+  <form action="/suppliers" method="POST">
+    <input name="name" placeholder="Name" required />
+    <input name="address" placeholder="Address" />
+    <input name="phone" placeholder="Phone" />
+    <button type="submit">Create</button>
+  </form>
+  <a href="/suppliers">Back to Suppliers</a>
+</body>
+</html>

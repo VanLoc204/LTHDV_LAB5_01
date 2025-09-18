@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thêm Product mới</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    form {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 400px;
+    }
+    input, select {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    label {
+      font-weight: bold;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #229954;
+    }
+    a {
+      text-decoration: none;
+      color: #2980b9;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thêm Product mới</h1>
+  <form action="/products" method="POST">
+    <input name="name" placeholder="Name" required />
+    <input name="address" placeholder="Address" />
+    <input name="phone" placeholder="Phone" />
+    <label for="supplierId">Supplier:</label>
+    <select name="supplierId" id="supplierId" required>
+      <% suppliers.forEach(supplier => { %>
+        <option value="<%= supplier._id %>"><%= supplier.name %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Create</button>
+  </form>
+  <a href="/products">Back to Products</a>
+</body>
+</html>
